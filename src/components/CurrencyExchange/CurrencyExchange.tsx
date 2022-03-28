@@ -12,8 +12,8 @@ type CurrencyExchangePropsType = {
   changeCurrentCurrency: (e: React.MouseEvent<HTMLLIElement>) => void;
 };
 
-export const CurrencyExchange: React.FC<CurrencyExchangePropsType> = (
-  {
+export const CurrencyExchange: React.FC<CurrencyExchangePropsType> = (props) => {
+  const {
     currenciesName,
     currentCurrency,
     currencyRate,
@@ -23,8 +23,8 @@ export const CurrencyExchange: React.FC<CurrencyExchangePropsType> = (
     changeCurrencyField,
     changeAction,
     changeCurrentCurrency,
-  }
-) => {
+  } = props;
+
   const viewCurrency = isBuying ? (
     <>
       <label>
