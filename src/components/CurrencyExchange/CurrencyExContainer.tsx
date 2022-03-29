@@ -3,14 +3,14 @@ import {currencyExchange, CurrencyType} from '../../bll/dataLogic';
 import {CurrencyExchange} from './CurrencyExchange';
 import {observer} from "mobx-react";
 
-export const CurrencyExContainer: React.FC<any> = observer(({timer}) => {
+export const CurrencyExContainer: React.FC<any> = observer(({store}) => {
   const {
     currencies,
     currentCurrency,
     amountOfCurrency,
     isBuying,
     amountOfBYN,
-  } = timer
+  } = store;
 
   let currencyRate: number = 0;
   const currenciesName = currencies.map((currency: CurrencyType) => {
@@ -51,7 +51,6 @@ export const CurrencyExContainer: React.FC<any> = observer(({timer}) => {
 
   return (
     <>
-      <div>Component is here</div>
       <CurrencyExchange
         currenciesName={currenciesName}
         currentCurrency={currentCurrency}
@@ -65,4 +64,4 @@ export const CurrencyExContainer: React.FC<any> = observer(({timer}) => {
       />
     </>
   );
-};)
+})
