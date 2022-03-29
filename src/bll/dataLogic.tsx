@@ -54,4 +54,6 @@ export const currencyExchange = observable({
 
 }, {
   changeCurrencyField: action('changeCurrencyField'),
+  changeAction: action('changeAction'),
+  changeCurrentCurrency: action('changeCurrentCurrency'),
 });
