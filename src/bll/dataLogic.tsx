@@ -16,7 +16,7 @@ export type CurrencyState = {
   amountOfCurrency: string;
 };
 
-const initialState: CurrencyState = {
+export const currencyExchange = observable({
   currencies: [
     {
       currencyName: 'USD',
@@ -38,4 +38,4 @@ const initialState: CurrencyState = {
   isBuying: true,
   amountOfBYN: '',
   amountOfCurrency: '',
-};
+} as CurrencyState);
