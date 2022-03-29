@@ -46,7 +46,7 @@ export const CurrencyExContainer: React.FC<any> = observer(({timer}) => {
   };
 
   const changeCurrentCurrency = (e: React.MouseEvent<HTMLLIElement>) => {
-    e.currentTarget.dataset.currency && dispatch(ChangeCurrentCurrencyAC(e.currentTarget.dataset.currency));
+    e.currentTarget.dataset.currency && currencyExchange.changeCurrentCurrency(e.currentTarget.dataset.currency);
   };
 
   return (
