@@ -42,7 +42,7 @@ export const CurrencyExContainer: React.FC<any> = observer(({timer}) => {
   };
 
   const changeAction = (e: React.MouseEvent<HTMLSpanElement>) => {
-    e.currentTarget.dataset.action === 'buy' ? dispatch(ChangeActionAC(true)) : dispatch(ChangeActionAC(false));
+    e.currentTarget.dataset.action === 'buy' ? currencyExchange.changeAction(true) : currencyExchange.changeAction(false);
   };
 
   const changeCurrentCurrency = (e: React.MouseEvent<HTMLLIElement>) => {
