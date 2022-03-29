@@ -44,6 +44,13 @@ export const currencyExchange = observable({
     this.amountOfCurrency = amountOfCurrency
   },
 
+  changeAction(isBuying: boolean) {
+    this.isBuying = isBuying
+  },
+
+  changeCurrentCurrency(currentCurrency: string) {
+    this.currentCurrency = currentCurrency
+  }
 
 }, {
   changeCurrencyField: action('changeCurrencyField'),
