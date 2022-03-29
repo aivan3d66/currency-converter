@@ -1,4 +1,4 @@
-import {observable, computed, configure} from "mobx";
+import {observable, computed, configure, action} from "mobx";
 import {observer} from "mobx-react";
 
 configure({enforceActions: "observed"});
@@ -38,4 +38,13 @@ export const currencyExchange = observable({
   isBuying: true,
   amountOfBYN: '',
   amountOfCurrency: '',
-} as CurrencyState);
+
+  changeCurrencyField(amountOfBYN: string, amountOfCurrency: string) {
+    this.amountOfBYN = amountOfBYN;
+    this.amountOfCurrency = amountOfCurrency
+  },
+
+
+}, {
+  changeCurrencyField: action('changeCurrencyField'),
+});
