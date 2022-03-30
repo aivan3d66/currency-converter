@@ -30,14 +30,21 @@ const CeButton = styled.button`
   width: 40%;
   padding: 10px;
   text-align: center;
-  color: cornflowerblue;
-  border: 2px solid cornflowerblue;
+  color: rgba(100, 149, 237, 100);
+  border: 2px solid rgba(100, 149, 237, 100);
   border-radius: 10px;
   cursor: pointer;
   transition: 0.3s;
   
   &:hover {
-    background-color: rebeccapurple;
+    color: #ffffff;
+    background-color: rgba(100, 149, 237, 0.5);
+    border: 2px solid rgba(100, 149, 237, 0.5);
+  }
+
+  .active {
+    color: white;
+    background-color: cornflowerblue;
   }
 `;
 
@@ -79,7 +86,7 @@ export const CurrencyExchange: React.FC<CurrencyExchangePropsType> = (props) => 
   );
 
   return (
-    <div className="currency">
+    <Currency className="currency">
       <h2>Currency converter</h2>
       <div className="currency-names">
         <p>Current currency:</p>
@@ -99,17 +106,23 @@ export const CurrencyExchange: React.FC<CurrencyExchangePropsType> = (props) => 
         </ul>
       </div>
       <div className="currency-action">
-        <span className={isBuying ? 'active' : ''} data-action="buy" onClick={changeAction}>
+        <CeButton style={{
+          color: isBuying ? '#ffffff' : 'rgba(100, 149, 237, 100)',
+          backgroundColor: isBuying ? 'rgba(100, 149, 237, 100)' : 'transparent'
+        }} data-action="buy" onClick={changeAction}>
           Buy
-        </span>
-        <span className={isBuying ? '' : 'active'} data-action="sell" onClick={changeAction}>
+        </CeButton>
+        <CeButton style={{
+          color: !isBuying ? '#ffffff' : 'rgba(100, 149, 237, 100)',
+          backgroundColor: !isBuying ? 'rgba(100, 149, 237, 100)' : 'transparent'
+        }} data-action="sell" onClick={changeAction}>
           Sell
-        </span>
+        </CeButton>
       </div>
       <div className="fields">
         <p>Currency rate: {currencyRate}</p>
         {viewCurrency}
       </div>
-    </div>
+    </Currency>
   );
 };
