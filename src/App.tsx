@@ -10,8 +10,10 @@ const Container = styled.div`
   background: linear-gradient(45deg, #EECFBA, #C5DDE8);
 `
 const Wrapper = styled.section`
+  min-width: 470px;
+  max-width: 540px;
   padding: 4em;
-  background: papayawhip;
+  margin: 0 auto;
 `;
 const Container = styled.div`
   min-width: 460px;
