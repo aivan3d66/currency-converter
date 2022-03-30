@@ -15,20 +15,13 @@ const Wrapper = styled.section`
   padding: 4em;
   margin: 0 auto;
 `;
-const Container = styled.div`
-  min-width: 460px;
-  max-width: 500px;
-  margin: 50px auto 0 auto;
-`;
 
-function App() {
+export const App = () => {
   return (
-    <Wrapper>
-      <Container>
+    <Container>
+      <Wrapper>
         <CurrencyExContainer store={currencyExchange}/>
-      </Container>
-    </Wrapper>
+      </Wrapper>
+    </Container>
   );
 }
-
-export default App;
