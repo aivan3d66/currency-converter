@@ -23,8 +23,9 @@ const Currency = styled.div`
   box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.2);
   
   h2 {
-    font-family: Comic Sans MS, Comic Sans, cursive;
+    color: rgb(77, 77, 77);
     text-align: center;
+    letter-spacing: 2px;
   }
   
   ul {
@@ -146,7 +147,7 @@ export const CurrencyExchange: React.FC<CurrencyExchangePropsType> = (props) => 
 
   return (
     <Currency>
-      <h2>Currency converter</h2>
+      <h2>Currency exchange</h2>
       <CurrencyNames>
         <p>Current currency:</p>
         <ul>
