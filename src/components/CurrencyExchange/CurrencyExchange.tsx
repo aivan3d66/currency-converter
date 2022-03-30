@@ -123,7 +123,7 @@ export const CurrencyExchange: React.FC<CurrencyExchangePropsType> = (props) => 
   const viewCurrency = isBuying ? (
     <>
       <label>
-        You give the next amount of BYN:
+        You give the next amount of <b>BYN</b>:
         <input value={amountOfBYN} data-currency="byn" onChange={changeCurrencyField}/>
       </label>
       <label>
@@ -138,7 +138,7 @@ export const CurrencyExchange: React.FC<CurrencyExchangePropsType> = (props) => 
         <input value={amountOfCurrency} data-currency="currency" onChange={changeCurrencyField}/>
       </label>
       <label>
-        You get the next amount of BYN:
+        You get the next amount of <b>BYN</b>:
         <input value={amountOfBYN} data-currency="byn" onChange={changeCurrencyField}/>
       </label>
     </>
