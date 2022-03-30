@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from "styled-components";
 
 type CurrencyExchangePropsType = {
   currenciesName: string[];
@@ -11,6 +12,21 @@ type CurrencyExchangePropsType = {
   changeAction: (e: React.MouseEvent<HTMLSpanElement>) => void;
   changeCurrentCurrency: (e: React.MouseEvent<HTMLLIElement>) => void;
 };
+
+const CeButton = styled.button`
+  width: 40%;
+  padding: 10px;
+  text-align: center;
+  color: cornflowerblue;
+  border: 2px solid cornflowerblue;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  
+  &:hover {
+    background-color: rebeccapurple;
+  }
+`;
 
 export const CurrencyExchange: React.FC<CurrencyExchangePropsType> = (props) => {
   const {
