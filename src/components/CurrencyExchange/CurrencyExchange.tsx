@@ -13,6 +13,19 @@ type CurrencyExchangePropsType = {
   changeCurrentCurrency: (e: React.MouseEvent<HTMLLIElement>) => void;
 };
 
+const Currency = styled.div`
+  margin: 100px 0 0 0;
+  padding: 0 15px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background-color: rgba(249, 247, 246, 0.9);
+  box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.2);
+  
+  h2 {
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    text-align: center;
+  }
+`;
 const CeButton = styled.button`
   width: 40%;
   padding: 10px;
