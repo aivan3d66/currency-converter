@@ -25,6 +25,28 @@ const Currency = styled.div`
     font-family: Comic Sans MS, Comic Sans, cursive;
     text-align: center;
   }
+  
+  ul {
+    list-style: none;
+    display: flex;
+  }
+
+  li {
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+`;
+const CurrencyNames = styled.div`
+  display: flex;
+  
+  p {
+    padding: 7px 0;
+  }
+`;
+const CurrencyAction = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;
 const CeButton = styled.button`
   width: 40%;
@@ -45,6 +67,29 @@ const CeButton = styled.button`
   .active {
     color: white;
     background-color: cornflowerblue;
+  }
+`;
+const Fields = styled.div`
+  display: block;
+  margin-bottom: 20px;
+
+  input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    outline: none;
+    border: 2px solid rgba(217, 217, 217, 1);
+    transition: 0.3s;
+
+    &:hover {
+      border-color: rgba(100, 149, 237, 100);
+    }
+    
+    &:active,
+    &:focus {
+      border: 2px solid transparent;
+      border-bottom: 2px solid rgba(100, 149, 237, 100);
+    }
   }
 `;
 
@@ -86,9 +131,9 @@ export const CurrencyExchange: React.FC<CurrencyExchangePropsType> = (props) => 
   );
 
   return (
-    <Currency className="currency">
+    <Currency>
       <h2>Currency converter</h2>
-      <div className="currency-names">
+      <CurrencyNames>
         <p>Current currency:</p>
         <ul>
           {currenciesName.map((currency: string, index: number) => {
@@ -104,8 +149,8 @@ export const CurrencyExchange: React.FC<CurrencyExchangePropsType> = (props) => 
             );
           })}
         </ul>
-      </div>
-      <div className="currency-action">
+      </CurrencyNames>
+      <CurrencyAction>
         <CeButton style={{
           color: isBuying ? '#ffffff' : 'rgba(100, 149, 237, 100)',
           backgroundColor: isBuying ? 'rgba(100, 149, 237, 100)' : 'transparent'
@@ -118,11 +163,11 @@ export const CurrencyExchange: React.FC<CurrencyExchangePropsType> = (props) => 
         }} data-action="sell" onClick={changeAction}>
           Sell
         </CeButton>
-      </div>
-      <div className="fields">
+      </CurrencyAction>
+      <Fields>
         <p>Currency rate: {currencyRate}</p>
         {viewCurrency}
-      </div>
+      </Fields>
     </Currency>
   );
 };
