@@ -4,6 +4,11 @@ import {currencyExchange} from './bll/store';
 import {CurrencyExContainer} from "./components/CurrencyExchange/CurrencyExContainer";
 import styled from 'styled-components';
 
+const Container = styled.div`
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(45deg, #EECFBA, #C5DDE8);
+`
 const Wrapper = styled.section`
   padding: 4em;
   background: papayawhip;
