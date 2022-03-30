@@ -16,6 +16,7 @@ type CurrencyExchangePropsType = {
 const Currency = styled.div`
   margin: 100px 0 0 0;
   padding: 0 15px;
+  font-family: FreeMono, monospace;
   border: 2px solid transparent;
   border-radius: 10px;
   background-color: rgba(249, 247, 246, 0.9);
@@ -33,12 +34,13 @@ const Currency = styled.div`
 
   li {
     display: inline-block;
-    margin-right: 10px;
+    margin-left: 10px;
     cursor: pointer;
   }
 `;
 const CurrencyNames = styled.div`
   display: flex;
+  justify-content: space-between;
   
   p {
     padding: 7px 0;
@@ -69,6 +71,12 @@ const CeButton = styled.button`
     background-color: cornflowerblue;
   }
 `;
+const Currencies = styled.li`
+  padding: 5px 10px;
+  color: cornflowerblue;
+  border: 2px solid rgba(100, 149, 237, 100);
+  transition: 0.3s;
+`;
 const Fields = styled.div`
   display: block;
   margin-bottom: 20px;
@@ -90,6 +98,12 @@ const Fields = styled.div`
       border: 2px solid transparent;
       border-bottom: 2px solid rgba(100, 149, 237, 100);
     }
+  }
+  
+  span {
+    margin-left: 10px;
+    color: rgba(100, 149, 237, 100);
+    border-bottom: 1px solid rgba(100, 149, 237, 100);
   }
 `;
 
@@ -138,14 +152,17 @@ export const CurrencyExchange: React.FC<CurrencyExchangePropsType> = (props) => 
         <ul>
           {currenciesName.map((currency: string, index: number) => {
             return (
-              <li
+              <Currencies
                 key={`${index}-${currency}`}
-                className={`currencies ${currentCurrency === currency ? 'activeCurrency' : null}`}
+                style={{
+                  color: currentCurrency === currency ? 'white' : 'cornflowerblue',
+                  backgroundColor: currentCurrency === currency ? 'cornflowerblue' : 'white',
+                }}
                 onClick={changeCurrentCurrency}
                 data-currency={currency}
               >
                 {currency}
-              </li>
+              </Currencies>
             );
           })}
         </ul>
@@ -165,7 +182,11 @@ export const CurrencyExchange: React.FC<CurrencyExchangePropsType> = (props) => 
         </CeButton>
       </CurrencyAction>
       <Fields>
-        <p>Currency rate: {currencyRate}</p>
+        <p>Currency rate:
+          <span>
+            {currencyRate}
+          </span>
+        </p>
         {viewCurrency}
       </Fields>
     </Currency>
