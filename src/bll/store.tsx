@@ -48,7 +48,9 @@ export const currencyExchange = observable({
   },
 
   changeCurrentCurrency(currentCurrency: string) {
-    this.currentCurrency = currentCurrency
+    this.currentCurrency = currentCurrency;
+    this.amountOfBYN = '';
+    this.amountOfCurrency = '';
   }
 
 }, {
