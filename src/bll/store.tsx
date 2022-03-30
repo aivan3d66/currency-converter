@@ -1,5 +1,4 @@
-import {observable, computed, configure, action} from "mobx";
-import {observer} from "mobx-react";
+import {observable, configure, action} from "mobx";
 
 configure({enforceActions: "observed"});
 
@@ -8,13 +7,13 @@ export type CurrencyType = {
   buyRate: number;
   sellRate: number;
 };
-export type CurrencyState = {
-  currencies: Array<CurrencyType>;
-  currentCurrency: string;
-  isBuying: boolean;
-  amountOfBYN: string;
-  amountOfCurrency: string;
-};
+// export type CurrencyState = {
+//   currencies: Array<CurrencyType>;
+//   currentCurrency: string;
+//   isBuying: boolean;
+//   amountOfBYN: string;
+//   amountOfCurrency: string;
+// };
 
 export const currencyExchange = observable({
   currencies: [
