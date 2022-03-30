@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import {currencyExchange} from './bll/store';
 import {CurrencyExContainer} from "./components/CurrencyExchange/CurrencyExContainer";
 import styled from 'styled-components';
