@@ -86,7 +86,7 @@ const Fields = styled.div`
     padding: 10px;
     margin: 10px 0;
     outline: none;
-    border: 2px solid rgba(217, 217, 217, 1);
+    border: 2px solid transparent;
     transition: 0.3s;
 
     &:hover {
