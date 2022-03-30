@@ -1,5 +1,5 @@
 import React from 'react';
-import {currencyExchange, CurrencyType} from '../../bll/dataLogic';
+import {currencyExchange, CurrencyType} from '../../bll/store';
 import {CurrencyExchange} from './CurrencyExchange';
 import {observer} from "mobx-react";
 
