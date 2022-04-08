@@ -14,7 +14,7 @@ type CurrencyExchangePropsType = {
 };
 
 const Currency = styled.div`
-  margin: 100px 0 0 0;
+  margin: 50px 0 0 0;
   padding: 0 15px;
   font-family: FreeMono, monospace;
   border: 2px solid transparent;
